@@ -2,6 +2,9 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.Scanner;
 import java.util.concurrent.ThreadLocalRandom;
+import java.util.stream.IntStream;
+
+import static java.util.Comparator.comparingDouble;
 
 public class task2 {
     public static int RandomRange(int min, int max){
@@ -31,9 +34,11 @@ public class task2 {
             }
             else rowback -=1;
         }
-
-        for (int i = 0; i< rows; i++){
-            for (int j = 0; j< k; j++){
+        Arrays.sort(arr2, comparingDouble(row -> IntStream.of(row)
+                .average()
+                .getAsDouble()));
+        for (int i = rows-1; i >= 0; i--){
+            for (int j = k-1; j >= 0; j--){
                 System.out.print("   " + arr2[i][j]);
             }
             System.out.println();

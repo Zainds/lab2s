@@ -5,7 +5,7 @@ public class Main {
         int n = 6;
         int min_ind = -999;
         double sr = 0; int k = 0;
-        int arr[] = new int[n];
+        int[] arr = new int[n];
         System.out.println("Enter day temperature");
         Scanner in = new Scanner(System.in);
         for (int i = 0; i < n; i ++){

@@ -8,8 +8,7 @@ import static java.util.Comparator.comparingDouble;
 
 public class task2 {
     public static int RandomRange(int min, int max){
-        int randomNum = ThreadLocalRandom.current().nextInt(min, max + 1);
-        return randomNum;
+        return ThreadLocalRandom.current().nextInt(min, max + 1);
     }
     public static void delete0rows(int[][] arr, int n, int k){
         int rows = 0;

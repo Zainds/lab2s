@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Scanner;
@@ -5,6 +6,7 @@ import java.util.concurrent.ThreadLocalRandom;
 import java.util.stream.IntStream;
 
 import static java.util.Comparator.comparingDouble;
+import static java.util.Comparator.comparingInt;
 
 public class task2 {
     public static int RandomRange(int min, int max){
@@ -36,12 +38,33 @@ public class task2 {
         Arrays.sort(arr2, comparingDouble(row -> IntStream.of(row)
                 .average()
                 .getAsDouble()));
-        for (int i = rows-1; i >= 0; i--){
-            for (int j = k-1; j >= 0; j--){
+       /* for (int i = 0; i < arr2.length-1; i++) {
+            for (int j = 0; j < arr2.length-i-1; j++) {
+                int sumArr1 = 0;
+                int sumArr2 = 0;
+
+                for(int a = 0; a < arr2[j].length; a++) {
+                    sumArr1 += arr2[j][a];
+                }
+
+                for(int b = 0; b < arr2[j+1].length; b++) {
+                    sumArr2 += arr2[j+1][b];
+                }
+
+                if (sumArr1 < sumArr2) {
+                    int[] temp = arr2[j];
+                    arr2[j] = arr2[j+1];
+                    arr2[j+1] = temp;
+                }
+            }
+        }*/
+        for (int i = 0; i < rows; i++){
+            for (int j = 0; j < k; j++){
                 System.out.print("   " + arr2[i][j]);
             }
             System.out.println();
         }
+
 
     }
     public static void main(String[] args){
@@ -55,7 +78,7 @@ public class task2 {
         for (int i = 0; i< n; i++){
             int flag = 1;
             for (int j = 0; j< k; j++){
-                arr[i][j] = RandomRange(2, 5);
+                arr[i][j] = RandomRange(3, 5);
                 System.out.print("   " + arr[i][j]);
                 if (arr[i][j]<4)flag = 0;
             }
